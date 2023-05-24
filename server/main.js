@@ -1,5 +1,19 @@
 import { Meteor } from 'meteor/meteor';
+import { NotesCollection } from '../imports/db/noteCollection'
+
+const insertNote = (title) =>
+  NotesCollection.insert({
+    noteTitle: title,
+    createdAt: new Date(),
+  });
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  if (NotesCollection.find().count() === 0) {
+    [
+      'first note',
+      'second note',
+      'third note',
+      'fourth note',
+    ].forEach(title => insertNote(title))
+  }
 });

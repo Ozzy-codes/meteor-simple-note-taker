@@ -1,5 +1,12 @@
 <body>
-<p>
-    hello 
-    </p>
+  {{>mainContainer}}
 </body>
+
+<template name="mainContainer">
+  <header>
+    <h1>Shared Note Taker</h1>
+  </header>
+  <ul>
+    {{#each notes}} {{>note}} {{/each}}
+  </ul>
+</template>
