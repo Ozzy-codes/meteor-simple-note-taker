@@ -7,6 +7,6 @@ import './newNoteForm'
 
 Template.mainContainer.helpers({
     notes() {
-        return NotesCollection.find({});
+        return NotesCollection.find({}, {sort: {createdAt: -1}});
     },
 });

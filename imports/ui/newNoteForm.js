@@ -1,8 +1,12 @@
 import { Template } from "meteor/templating";
 import { NotesCollection } from "../db/noteCollection";
+import { ReactiveVar } from 'meteor/reactive-var';
 
 import './newNoteForm.html';
 
+Template.newNoteForm.onCreated(function() {
+    this.editMode = new ReactiveVar(false);
+});
 Template.newNoteForm.events({ 
     'submit .newNoteForm': function(event, template) { 
         event.preventDefault();
@@ -17,5 +21,13 @@ Template.newNoteForm.events({
         });
         event.target.noteTitle.value = '';
         event.target.noteBody.value = '';
+    },
+    'click .editMode'(event, instance) {
+        instance.editMode.set(!instance.editMode.get());
     } 
+});
+Template.newNoteForm.helpers({
+    editMode() {
+        return Template.instance().editMode.get();
+    }
 });

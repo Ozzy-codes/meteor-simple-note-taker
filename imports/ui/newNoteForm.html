@@ -1,4 +1,6 @@
 <template name="newNoteForm">
+  <span class="editMode">Create a new note</span>
+  {{#if editMode}}
   <form class="newNoteForm">
     <div>
       <label for="noteTitle">Note title</label>
@@ -10,4 +12,5 @@
     </div>
     <button type="submit">Add Note</button>
   </form>
+  {{/if}}
 </template>
