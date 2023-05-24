@@ -7,7 +7,7 @@
     <h1>Shared Note Taker</h1>
     {{> loginButtons }}
   </header>
-  {{#if currentUser}}
+  {{#if currentUser}} {{> newNoteForm }}
   <ul>
     {{#each notes}} {{>note}} {{/each}}
   </ul>
