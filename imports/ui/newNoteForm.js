@@ -1,5 +1,5 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from "meteor/templating";
-import { NotesCollection } from "../db/noteCollection";
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './newNoteForm.html';
@@ -14,11 +14,8 @@ Template.newNoteForm.events({
          const title = event.target.noteTitle.value; 
          const body = event.target.noteBody.value; 
 
-        NotesCollection.insert({
-            noteTitle: title,
-            noteBody: body,
-            createdAt: new Date(),
-        });
+        Meteor.call('notes.insert', title, body);
+
         event.target.noteTitle.value = '';
         event.target.noteBody.value = '';
     },

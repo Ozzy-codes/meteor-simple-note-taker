@@ -4,12 +4,17 @@
 
 <template name="mainContainer">
   <header>
-    <h1>Shared Note Taker</h1>
-    {{> loginButtons }}
+    <div class="my-8">
+      <h1>Shared Note Taker</h1>
+      {{> loginButtons }}
+    </div>
   </header>
-  {{#if currentUser}} {{> newNoteForm }}
+  {{#if currentUser}}
+  <div class="my-8">{{> newNoteForm }}</div>
   <ul>
     {{#each notes}} {{>note}} {{/each}}
   </ul>
   {{/if}}
+  <button class="bg-orange-600">tailwind testing - button</button>
+  <div class="bg-orange-600">tailwind testing - div</div>
 </template>
