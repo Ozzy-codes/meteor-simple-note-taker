@@ -12,7 +12,10 @@
   {{#if currentUser}}
   <div class="my-8">{{> newNoteForm }}</div>
   <ul>
-    {{#each notes}} {{>note}} {{/each}}
+    {{#if Template.subscriptionsReady}} {{#each notes}} {{>note}} {{/each}}
+    {{else}}
+    <div>Loading...</div>
+    {{/if}}
   </ul>
   {{/if}}
   <button class="bg-orange-600">tailwind testing - button</button>
