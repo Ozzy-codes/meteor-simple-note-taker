@@ -1,5 +1,9 @@
 <template name="note">
-  <li>
+  <li id="individual-note" class="my-3">
     <span>{{noteTitle}}</span>
+    {{#if expand}}
+    <div>{{noteBody}}</div>
+    <div>- {{userEmail}}</div>
+    {{/if}}
   </li>
 </template>

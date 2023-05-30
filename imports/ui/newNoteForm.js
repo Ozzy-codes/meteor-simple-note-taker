@@ -8,7 +8,7 @@ Template.newNoteForm.onCreated(function() {
     this.editMode = new ReactiveVar(false);
 });
 Template.newNoteForm.events({ 
-    'submit .newNoteForm': function(event, template) { 
+    'submit #newNoteForm': function(event, template) { 
         event.preventDefault();
 
          const title = event.target.noteTitle.value; 
@@ -19,7 +19,7 @@ Template.newNoteForm.events({
         event.target.noteTitle.value = '';
         event.target.noteBody.value = '';
     },
-    'click .editMode'(event, instance) {
+    'click #editMode'(event, instance) {
         instance.editMode.set(!instance.editMode.get());
     } 
 });
