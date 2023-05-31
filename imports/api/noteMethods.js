@@ -24,8 +24,24 @@ Meteor.methods({
         check(noteId, String);
 
         if (!this.userId) {
-            throw new Meteor.Error('Not authorized')
+            throw new Meteor.Error('Not authorized');
         }
         NotesCollection.remove(noteId);
+    },
+    'notes.update'(noteId, newTitle, newBody) {
+        check(noteId, String);
+        check(newTitle, String);
+        check(newBody, String);
+
+        if (!this.userId) {
+            throw new Meteor.Error('Not authorized');
+        }
+        //need to retain the userId and userEmail
+        NotesCollection.update({_id: noteId}, {
+            $set:{
+                noteTitle: newTitle,
+                noteBody: newBody,
+            }
+        });
     },
 })
