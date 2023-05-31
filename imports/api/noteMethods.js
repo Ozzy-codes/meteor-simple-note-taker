@@ -20,5 +20,12 @@ Meteor.methods({
             userEmail: userEmail,
         })
     },
+    'notes.remove'(noteId){
+        check(noteId, String);
 
+        if (!this.userId) {
+            throw new Meteor.Error('Not authorized')
+        }
+        NotesCollection.remove(noteId);
+    },
 })

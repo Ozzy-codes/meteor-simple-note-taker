@@ -11,6 +11,9 @@ Template.note.events({
     'click #individual-note'(event,instance){
         instance.expand.set(!instance.expand.get());
     },
+    'click #delete'(event,instance){
+        Meteor.call('notes.remove',this._id)
+    },
 })
 Template.note.helpers({
     expand: function() {
