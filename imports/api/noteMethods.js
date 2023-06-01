@@ -36,7 +36,6 @@ Meteor.methods({
         if (!this.userId) {
             throw new Meteor.Error('Not authorized');
         }
-        //need to retain the userId and userEmail
         NotesCollection.update({_id: noteId}, {
             $set:{
                 noteTitle: newTitle,

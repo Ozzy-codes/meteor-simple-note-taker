@@ -11,7 +11,7 @@
   </header>
   {{#if currentUser}}
   <div class="my-8">{{> newNoteForm }}</div>
-  <div class="border-red">Select task to review contents:</div>
+  <div class="border-red">Select task to expand/collapse contents:</div>
   <ul>
     {{#if Template.subscriptionsReady}} {{#each notes}} {{>note}} {{/each}}
     {{else}}
