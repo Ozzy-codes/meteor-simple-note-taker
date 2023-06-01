@@ -1,11 +1,11 @@
-<body>
+<body class="h-screen bg-slate-300">
   {{>mainContainer}}
 </body>
 
 <template name="mainContainer">
   <header>
-    <div class="my-8">
-      <h1 class="text-2xl">Shared Note Taker</h1>
+    <div class="my-6">
+      <h1 class="text-4xl">Shared Note Taker</h1>
       {{> loginButtons }}
     </div>
   </header>
@@ -13,7 +13,7 @@
   <div class="my-8">
     {{> newNoteForm }}
   </div>
-  <div class="border-red">Select task to expand/collapse contents:</div>
+  <div class="text-2xl border-b-2 border-b-indigo-500">Select task to expand/collapse contents:</div>
   <ul>
     {{#if Template.subscriptionsReady}} {{#each notes}} {{>note}} {{/each}}
     {{else}}
