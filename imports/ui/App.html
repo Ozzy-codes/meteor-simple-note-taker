@@ -5,12 +5,14 @@
 <template name="mainContainer">
   <header>
     <div class="my-8">
-      <h1>Shared Note Taker</h1>
+      <h1 class="text-2xl">Shared Note Taker</h1>
       {{> loginButtons }}
     </div>
   </header>
   {{#if currentUser}}
-  <div class="my-8">{{> newNoteForm }}</div>
+    <div class="my-8">
+      {{> newNoteForm }}
+    </div>
   <ul>
     {{#each notes}} {{>note}} {{/each}}
   </ul>
