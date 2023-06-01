@@ -16,7 +16,9 @@ Template.note.events({
     instance.editMode.set(!instance.editMode.get())
   },
   'click #delete' (event, instance) {
-    Meteor.call('notes.remove', this._id)
+    if (confirm('Are you sure you want to permanently remove your note?')) {
+      Meteor.call('notes.remove', this._id)
+    }
   },
   'submit #updateNoteForm' (event, instance) {
     event.preventDefault()
