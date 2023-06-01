@@ -6,8 +6,8 @@
     <div class="shadow-md p-5">
       <h2 class="text-xl">{{noteTitle}}</h2>
       {{#if expand}}
-      <span id="delete" class="mx-3">&times;</span>
-      <span id="editNote" class="mx-3">Edit Note</span>
+      <span id="delete" class="mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">&times;</span>
+      <span id="editNote" class="mx-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit Note</span>
       <p>{{noteBody}}</p>
       <p>- {{userEmail}}</p>
       {{/if}}
