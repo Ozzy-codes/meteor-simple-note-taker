@@ -1,15 +1,15 @@
 <template name="note">
-  <li id="individualNote" class="my-3">
+  <li id="individualNote" class="my-5">
     {{#if editMode}}
-    <div>{{> editForm}}</div>
+    <div class="shadow-md p-5">{{> editForm}}</div>
     {{else}}
-    <div>
-      <span>{{noteTitle}}</span>
+    <div class="shadow-md p-5">
+      <h2 class="text-xl">{{noteTitle}}</h2>
       {{#if expand}}
       <span id="delete" class="mx-3">&times;</span>
       <span id="editNote" class="mx-3">Edit Note</span>
-      <div>{{noteBody}}</div>
-      <div>- {{userEmail}}</div>
+      <p>{{noteBody}}</p>
+      <p>- {{userEmail}}</p>
       {{/if}}
     </div>
     {{/if}}

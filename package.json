@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
+    "autoprefixer": "^10.4.14",
     "jquery": "^3.6.0",
-    "meteor-node-stubs": "^1.2.1"
+    "meteor-node-stubs": "^1.2.1",
+    "postcss": "^8.4.24",
+    "postcss-load-config": "^4.0.1",
+    "tailwindcss": "^3.3.2"
   },
   "meteor": {
     "mainModule": {
@@ -19,9 +23,17 @@
     },
     "testModule": "tests/main.js"
   },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2"
+    "eslint": "^8.41.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.1.1"
   }
 }

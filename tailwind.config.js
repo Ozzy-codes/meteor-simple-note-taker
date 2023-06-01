@@ -1,40 +1,38 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
+  // purge: ['./imports/ui/**/*.{js,jsx,ts,tsx}', './public/*.html'],
   content: [
-    "./imports/ui/**/*.{html,js,jsx,ts,tsx}",
-    "./client/*.html",
+    "./imports/ui/*.{js,jsx,ts,tsx}",
+    "./imports/ui/*.html",
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
-    },
-    colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
-    },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      display: ['Martel Sans', 'sans-serif'],
+      body: ['Martel Sans', 'sans-serif'],
     },
     extend: {
       spacing: {
-        '8xl': '96rem',
-        '9xl': '128rem',
+        '128': '32rem',
+        '112': '28rem',
+        '96': '24rem',
+        '80': '20rem',
+        '7': '1.875rem',
       },
-      borderRadius: {
-        '4xl': '2rem',
+      fontSize: {
+        '4xs': '0.625rem',
+        '3xs': '0.6875rem',
+        '2xs': '0.75rem',
+        xs: '0.8125rem'
+      },
+      colors: {
+        fuchsia: colors.amber
       }
+    }
   },
-  plugins: [],
-  } 
-}
+  variants: {
+    extend: {}
+  },
+  plugins: []
+};
