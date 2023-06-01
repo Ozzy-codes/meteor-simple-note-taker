@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     "./imports/ui/**/*.{html,js,jsx,ts,tsx}",
+    "./imports/ui/*.{js,jsx,ts,tsx}",
+    "./imports/ui/*.html",
     "./client/*.html",
   ],
   theme: {
