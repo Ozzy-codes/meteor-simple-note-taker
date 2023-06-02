@@ -1,10 +1,44 @@
 <template name="note">
-  <li class="m-5">
+  <li id="individualNote" class="my-5">
+    {{#if editMode}}
+    <div class="shadow-md p-5">{{> editForm}}</div>
+    {{else}}
     <div class="shadow-md p-5">
-      <h2 class="text-xl">{{noteTitle}}</h2>
-      <p>
-        {{noteBody}}
-      </p>
+      <h2 class="text-lg">{{noteTitle}}</h2>
+      {{#if expand}}
+      <span id="delete" class="mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">&times;</span>
+      <span id="editNote" class="mx-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit Note</span>
+      <p class="text-base">{{noteBody}}</p>
+      <p class="text-sm">- {{userEmail}}</p>
+      {{/if}}
     </div>
+    {{/if}}
   </li>
+</template>
+
+<template name="editForm">
+  <form id="updateNoteForm">
+    <div class="">
+      <label for="noteTitle">New Note title</label>
+      <input
+        id="noteTitle"
+        type="text"
+        name="noteTitle"
+        size="40"
+        value="{{noteTitle}}"
+      />
+    </div>
+    <div>
+      <label for="noteBody">New Note body</label>
+      <textarea
+        name="noteBody"
+        id="noteBody"
+        cols="40"
+        rows="5"
+        value="{{noteBody}}"
+      ></textarea>
+    </div>
+    <button class=" " type="submit">Update Note</button>
+    <span class="mx-5" id="cancelUpdate">Cancel Update</span>
+  </form>
 </template>
