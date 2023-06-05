@@ -21,7 +21,7 @@ Meteor.startup(() => {
     NotesCollection = new Mongo.Collection('NotesCollection', { _driver: db });
   };
 
-    if (NotesCollection.find().count() === 0) {
+  if (NotesCollection.find().count() === 0) {
 
     [
       { title: 'first note', body: 'This is the body for the first note' },
