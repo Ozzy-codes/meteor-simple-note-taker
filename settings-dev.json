@@ -1,0 +1,10 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://admin:S9TUCoTKP68wCjzH@cluster0.nkxveaq.mongodb.net/?retryWrites=true&w=majority"
+    }
+  },
+  "mongo": {
+    "url": "mongodb+srv://admin:S9TUCoTKP68wCjzH@cluster0.nkxveaq.mongodb.net/?retryWrites=true&w=majority"
+    }
+}
