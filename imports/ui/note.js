@@ -26,7 +26,7 @@ Template.note.events({
     const newTitle = event.target.noteTitle.value
     const newBody = event.target.noteBody.value
 
-    Meteor.call('notes.update', this._id, newTitle, newBody)
+    Meteor.call('notes.update', this._id, this.userId, newTitle, newBody)
 
     instance.editMode.set(!instance.editMode.get())
   },
