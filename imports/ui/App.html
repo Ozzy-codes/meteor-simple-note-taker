@@ -1,21 +1,24 @@
-<body class="h-screen bg-slate-300">
+<body class="h-screen bg-slate-300 text-center flex flex-col items-center">
   {{>mainContainer}}
 </body>
 
 <template name="mainContainer">
-  <header>
+  <header class="w-full bg-white">
     <div class="my-6">
-      <h1 class="text-4xl">Shared Note Taker</h1>
-      {{> loginButtons }}
+      <h1 class="text-8xl">Shared Note Taker</h1>
+      <div class="text-2xl">{{> loginButtons }}</div>
     </div>
   </header>
   {{#if currentUser}}
   <div class="my-8">
     {{> newNoteForm }}
   </div>
-  <div class="text-2xl border-b-2 border-b-indigo-500">Select task to expand/collapse contents:</div>
+  <div class="text-5xl border-b-2 border-b-indigo-500">Select task to expand/collapse contents:</div>
   <ul>
-    {{#if Template.subscriptionsReady}} {{#each notes}} {{>note}} {{/each}}
+    {{#if Template.subscriptionsReady}} 
+      {{#each notes}} 
+      {{>note}} 
+      {{/each}}
     {{else}}
     <div>Loading...</div>
     {{/if}}

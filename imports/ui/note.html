@@ -1,15 +1,15 @@
 <template name="note">
-  <li id="individualNote" class="my-5">
+  <li id="individualNote" class="my-5 text-2xl">
     {{#if editMode}}
     <div class="shadow-md p-5">{{> editForm}}</div>
     {{else}}
     <div class="shadow-md p-5">
-      <h2 class="text-lg">{{noteTitle}}</h2>
+      <h2 class="text-2xl inline-block">{{noteTitle}}</h2>
       {{#if expand}}
-      <span id="delete" class="mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">&times;</span>
       <span id="editNote" class="mx-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit Note</span>
-      <p class="text-base">{{noteBody}}</p>
-      <p class="text-sm">- {{userEmail}}</p>
+      <span id="delete" class="mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">&times;</span>
+      <p class="text-xl my-4">{{noteBody}}</p>
+      <p class="text-base">- {{userEmail}}</p>
       {{/if}}
     </div>
     {{/if}}
@@ -18,13 +18,14 @@
 
 <template name="editForm">
   <form id="updateNoteForm">
-    <div class="">
+    <div class="my-3">
       <label for="noteTitle">New Note title</label>
       <input
         id="noteTitle"
         type="text"
         name="noteTitle"
         size="40"
+        class="text-2xl border-black border-solid border-2"
         value="{{noteTitle}}"
       />
     </div>
@@ -35,10 +36,13 @@
         id="noteBody"
         cols="40"
         rows="5"
+        class="text-2xl border-black border-solid border-2"
         value="{{noteBody}}"
       ></textarea>
     </div>
-    <button class=" " type="submit">Update Note</button>
-    <span class="mx-5" id="cancelUpdate">Cancel Update</span>
+    <div class="my-3">
+      <button class="mx-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Update Note</button>
+      <span class="mx-5 mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="cancelUpdate">Cancel Update</span>
+    </div>
   </form>
 </template>
