@@ -20,10 +20,11 @@ Meteor.methods({
       userEmail
     })
   },
-  'notes.remove' (noteId) {
+  'notes.remove' (noteId, noteUser) {
     check(noteId, String)
+    check(noteUser, String)
 
-    if (!this.userId) {
+    if (!this.userId && this.userId !== noteUser) {
       throw new Meteor.Error('Not authorized')
     }
     NotesCollection.remove(noteId)
