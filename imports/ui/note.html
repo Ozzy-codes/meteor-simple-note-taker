@@ -4,11 +4,13 @@
     <div class="shadow-md p-5">{{> editForm}}</div>
     {{else}}
     <div class="shadow-md p-5">
-      <h2 class="text-base inline-block">{{noteTitle}}</h2>
-      {{#if expand}}
-      <span id="editNote" class="mx-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Edit Note</span>
-      <span id="delete" class="mx-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">&times;</span>
-      <p class="text-base my-4">{{noteBody}}</p>
+      <h2 class="text-base inline-block mb-2">{{noteTitle}}</h2>
+      {{#if expand}}      
+      <div class="inline-block mb-3">
+        <span id="editNote" class="mx-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Edit Note</span>
+        <span id="delete" class="mx-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">&times;</span>
+      </div>
+      <p class="text-base">{{noteBody}}</p>
       <p class="text-sm">- {{userEmail}}</p>
       {{/if}}
     </div>

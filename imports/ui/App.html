@@ -5,7 +5,7 @@
 <template name="mainContainer">
   <header class="w-full bg-white">
     <div class="my-5">
-      <h1 class="text-4xl">Shared Note Taker</h1>
+      <h1 class="text-4xl">Note Taker</h1>
       <div class="text-base {{moveLogin}} mt-2 mr-4">{{> loginButtons align=(moveLoginArugment)}}</div>
     </div>
   </header>
@@ -13,7 +13,9 @@
   <div class="my-4">
     {{> newNoteForm }}
   </div>
-  <div class="text-2xl border-b-2 border-b-indigo-500">Select task to expand/collapse contents:</div>
+  <div>
+    <h2 class="text-2xl border-b-2 border-b-indigo-500 mx-4">Select note to expand/collapse contents:</h2>
+  </div>
   <ul>
     {{#if Template.subscriptionsReady}} 
       {{#each notes}} 
