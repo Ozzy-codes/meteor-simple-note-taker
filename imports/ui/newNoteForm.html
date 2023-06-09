@@ -1,31 +1,29 @@
 <template name="newNoteForm">
   {{#if expandForm}}
   <form id="newNoteForm">
-    <div class="my-3">
-      <label for="noteTitle" class="text-2xl">Note title</label>
+    <div class="mb-2">
+      <label for="noteTitle" class="text-base">Note title</label>
       <input 
         id="noteTitle" 
         type="text" 
         name="noteTitle" 
-        size="40" 
-        class="text-2xl border-black border-solid border-2" />
+        size="30" 
+        class="text-base border-black border-solid border-2" />
     </div>
-    <div>
-      <label for="noteBody" class="text-2xl">Note body</label>
+    <div class="">
+      <label for="noteBody" class="text-base">Note body</label>
       <textarea 
       name="noteBody" 
-      id="noteBody" 
-      cols="40" 
-      rows="5" 
-      class="text-2xl border-black border-solid border-2">
-      </textarea>
+      id="noteBody"  
+      class="text-base border-black border-solid border-2 w-full h-auto min-h-[50px]"
+      form="newNoteForm"></textarea>
     </div>
-    <div class="my-3">
-      <button class="text-2xl bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4" type="submit">Add Note</button>
+    <div class="mt-3">
+      <button class="text-base bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4" type="submit">Add Note</button>
     </div>
   </form>
   {{else}}
-  <span id="expandForm" class="text-2xl editMode bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  <span id="expandForm" class="text-base editMode bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
     Create a new note 
   </span>
   {{/if}}
