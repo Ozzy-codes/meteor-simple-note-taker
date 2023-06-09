@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 import { NotesCollection } from '../db/noteCollection'
 
@@ -11,5 +12,11 @@ Template.mainContainer.onCreated(function () {
 Template.mainContainer.helpers({
   notes () {
     return NotesCollection.find({}, { sort: { createdAt: -1 } })
+  },
+  moveLogin () {
+    return Meteor.user() ? 'text-right' : ' '
+  },
+  moveLoginArugment () {
+    return Meteor.user() ? 'right' : ' '
   }
 })
