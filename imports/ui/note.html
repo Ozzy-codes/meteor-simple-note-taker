@@ -1,14 +1,18 @@
 <template name="note">
-  <li id="individualNote" class="my-5 text-base">
+  <li id="individualNote"
+    class="my-5 text-base">
     {{#if editMode}}
     <div class="shadow-md p-5">{{> editForm}}</div>
     {{else}}
     <div class="shadow-md p-5">
       <h2 class="text-base inline-block mb-2">{{noteTitle}}</h2>
-      {{#if expand}}      
+      {{#if expand}}
       <div class="inline-block mb-3">
-        <span id="editNote" class="mx-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Edit Note</span>
-        <span id="delete" class="mx-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">&times;</span>
+        <span id="editNote"
+          class="mx-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">Edit
+          Note</span>
+        <span id="delete"
+          class="mx-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">&times;</span>
       </div>
       <p class="text-base">{{noteBody}}</p>
       <p class="text-sm">- {{userEmail}}</p>
@@ -22,27 +26,31 @@
   <form id="updateNoteForm">
     <div class="my-3">
       <label for="noteTitle">New Note title</label>
-      <input
-        id="noteTitle"
+      <input id="noteTitle"
         type="text"
         name="noteTitle"
         size="30"
         class="text-base border-black border-solid border-2"
-        value="{{noteTitle}}"
-      />
+        value="{{noteTitle}}" />
     </div>
     <div>
       <label for="noteBody">New Note body</label>
-      <textarea
-        name="noteBody"
+      <textarea name="noteBody"
         id="noteBody"
         class="text-base border-black border-solid border-2 w-full h-auto min-h-[50px]"
-        value="{{noteBody}}"
-      ></textarea>
+        value="{{noteBody}}"></textarea>
     </div>
     <div class="my-3">
-      <button class="mx-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="submit">Update Note</button>
-      <span class="mx-2 mx-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="cancelUpdate">Cancel Update</span>
+      <button
+        class="mx-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded border border-transparent"
+        type="submit">
+        Update Note
+      </button>
+      <span
+        class="mx-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block max-[353px]:mt-3"
+        id="cancelUpdate">
+        Cancel Update
+      </span>
     </div>
   </form>
 </template>
