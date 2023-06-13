@@ -10,13 +10,13 @@ Template.mainContainer.onCreated(function () {
   this.subscribe('notes')
 })
 Template.mainContainer.helpers({
-  notes () {
+  notes() {
     return NotesCollection.find({}, { sort: { createdAt: -1 } })
   },
-  moveLogin () {
+  moveLogin() {
     return Meteor.user() ? 'text-right' : ' '
   },
-  moveLoginArugment () {
+  moveLoginArgument() {
     return Meteor.user() ? 'right' : ' '
   }
 })

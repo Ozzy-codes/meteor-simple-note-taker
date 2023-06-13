@@ -1,29 +1,37 @@
-<body class="h-screen bg-slate-300 text-center flex flex-col items-center">
+<body class="w-screen bg-slate-300 text-center flex flex-col items-center">
   {{>mainContainer}}
 </body>
 
 <template name="mainContainer">
-  <header class="w-full bg-white">
+  <header class="w-screen bg-white">
     <div class="my-5">
-      <h1 class="text-4xl">Note Taker</h1>
-      <div class="text-base {{moveLogin}} mt-2 mr-4">{{> loginButtons align=(moveLoginArugment)}}</div>
+      <h1 class="text-5xl lg:text-8xl">Note Taker</h1>
+      <div class="text-base {{moveLogin}} mt-2 mr-4">
+        {{> loginButtons align=(moveLoginArgument)}}
+      </div>
     </div>
   </header>
   {{#if currentUser}}
-  <div class="my-4">
-    {{> newNoteForm }}
+  <div class="md:w-screen md:mt-8 md:flex md:justify-evenly">
+    <div class="my-4 p-5 max-w-sm md:m-0 md:p-0 md:inline-block lg:grow lg:max-w-lg">
+      {{> newNoteForm }}
+    </div>
+    <div class="max-w-sm md:inline-block lg:max-w-lg">
+      <div>
+        <h2 class="text-2xl border-b-2 border-b-indigo-500 mx-4">
+          Select note to expand/collapse contents:
+        </h2>
+      </div>
+      <ul>
+        {{#if Template.subscriptionsReady}}
+        {{#each notes}}
+        {{>note}}
+        {{/each}}
+        {{else}}
+        <div>Loading...</div>
+        {{/if}}
+      </ul>
+    </div>
   </div>
-  <div>
-    <h2 class="text-2xl border-b-2 border-b-indigo-500 mx-4">Select note to expand/collapse contents:</h2>
-  </div>
-  <ul>
-    {{#if Template.subscriptionsReady}} 
-      {{#each notes}} 
-      {{>note}} 
-      {{/each}}
-    {{else}}
-    <div>Loading...</div>
-    {{/if}}
-  </ul>
   {{/if}}
 </template>
